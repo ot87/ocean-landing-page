@@ -30,6 +30,7 @@
       "plugin:react-hooks/recommended"
     ],
     "rules": {
+      "no-unused-vars": 1,
       "react/jsx-uses-react": "off",
       "react/react-in-jsx-scope": "off"
     }
@@ -45,9 +46,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "eslint": "^7.25.0",
-    "eslint-plugin-react-hooks": "^4.2.0"
   }
 }
