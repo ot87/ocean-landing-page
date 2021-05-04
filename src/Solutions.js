@@ -1,3 +1,5 @@
+import { forwardRef } from 'react';
+
 import solution1Image from './assets/solution1.jpg';
 import solution2Image from './assets/solution2.jpg';
 
@@ -13,11 +15,16 @@ const useStyles = makeStyles({
   }
 });
 
-const Solutions = () => {
+const Solutions = forwardRef(function Solutions(_, ref) {
   const classes = useStyles();
 
   return (
-    <Container className={classes.root} maxWidth={false} disableGutters>
+    <Container
+      className={classes.root}
+      maxWidth={false}
+      disableGutters
+      ref={ref}
+    >
       <Box
         display='flex'
         flexDirection='column'
@@ -52,6 +59,6 @@ const Solutions = () => {
       </Box>
     </Container>
   );
-};
+});
 
 export default Solutions;

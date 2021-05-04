@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import logoImage from './assets/logo.png';
 import backgroundImage from './assets/background-ocean.jpg';
 
@@ -23,7 +25,7 @@ const useStyles = makeStyles(({ palette }) => ({
   }
 }));
 
-const Main = () => {
+const Main = ({ onSolutionsClick }) => {
   const classes = useStyles();
 
   return (
@@ -61,11 +63,22 @@ const Main = () => {
           >
             Choose your best holidays!
           </Typography>
-          <Button variant='outlined' size='large' color='primary'>Solutions</Button>
+          <Button
+            variant='outlined'
+            size='large'
+            color='primary'
+            onClick={onSolutionsClick}
+          >
+            Solutions
+          </Button>
         </Box>
       </Box>
     </Container>
   );
+};
+
+Main.propTypes = {
+  onSolutionsClick: PropTypes.func.isRequired
 };
 
 export default Main;
