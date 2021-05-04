@@ -33,10 +33,18 @@ function SolutionCard({ name, text, image, imageTitle }) {
           title={imageTitle}
         />
         <CardContent>
-          <Typography gutterBottom variant='h5'>
+          <Typography
+            gutterBottom
+            variant='h5'
+            align='center'
+          >
             {name}
           </Typography>
-          <Typography variant='body2' color='textSecondary' component='p'>
+          <Typography
+            variant='body2'
+            color='textSecondary'
+            align='center'
+          >
             {text}
           </Typography>
         </CardContent>
