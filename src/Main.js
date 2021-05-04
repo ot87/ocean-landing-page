@@ -7,7 +7,7 @@ import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(({ palette }) => ({
   root: {
     height: '100vh',
     backgroundImage: `url(${backgroundImage})`,
@@ -17,8 +17,11 @@ const useStyles = makeStyles({
   logo: {
     height: 50,
     borderRadius: '50%'
+  },
+  textColor: {
+    color: palette.background.paper
   }
-});
+}));
 
 const Main = () => {
   const classes = useStyles();
@@ -38,9 +41,9 @@ const Main = () => {
         >
           <img className={classes.logo} src={logoImage} alt='Palms logo' />
           <Box>
-            <Button size='large' color='primary'>Solutions</Button>
-            <Button size='large' color='primary'>About Us</Button>
-            <Button size='large' color='primary'>Contact Us</Button>
+            <Button size='large' color='primary' className={classes.textColor}>Solutions</Button>
+            <Button size='large' color='primary' className={classes.textColor}>About Us</Button>
+            <Button size='large' color='primary' className={classes.textColor}>Contact Us</Button>
           </Box>
         </Box>
         <Box
@@ -54,7 +57,7 @@ const Main = () => {
             gutterBottom
             variant='h3'
             align='center'
-            color='primary'
+            className={classes.textColor}
           >
             Choose your best holidays!
           </Typography>
