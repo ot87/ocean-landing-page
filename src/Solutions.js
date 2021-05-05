@@ -31,10 +31,10 @@ const Solutions = forwardRef(function Solutions(_, ref) {
         alignItems='center'
         p={2}
       >
-          <Typography gutterBottom variant='h4'>
+          <Typography gutterBottom variant='h4' color='primary'>
             Solutions
           </Typography>
-          <Typography gutterBottom variant='h5'>
+          <Typography gutterBottom variant='h5' color='textSecondary'>
             Choose your best holidays!
           </Typography>
           <Box

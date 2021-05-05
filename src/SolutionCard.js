@@ -36,7 +36,7 @@ function SolutionCard({ name, text, image, imageTitle }) {
           <Typography
             gutterBottom
             variant='h5'
-            align='center'
+            align='center' color='primary'
           >
             {name}
           </Typography>
