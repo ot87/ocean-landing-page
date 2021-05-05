@@ -31,31 +31,39 @@ const Solutions = forwardRef(function Solutions(_, ref) {
         alignItems='center'
         p={2}
       >
-          <Typography gutterBottom variant='h4' color='primary'>
-            Solutions
-          </Typography>
-          <Typography gutterBottom variant='h5' color='textSecondary'>
-            Choose your best holidays!
-          </Typography>
-          <Box
-            display='flex'
-            justifyContent='space-evenly'
-            flexWrap='wrap'
-            width='100%'
-          >
-              <SolutionCard
-                name='Solution 1'
-                text='Solution 1 text'
-                image={solution1Image}
-                imageTitle='Solution 1'
-              />
-              <SolutionCard
-                name='Solution 2'
-                text='Solution 2 text'
-                image={solution2Image}
-                imageTitle='Solution 2'
-              />
-          </Box>
+        <Typography
+          gutterBottom
+          variant='h4'
+          color='primary'
+        >
+          Solutions
+        </Typography>
+        <Typography
+          gutterBottom
+          variant='h5'
+          color='textSecondary'
+        >
+          Choose your best holidays!
+        </Typography>
+        <Box
+          display='flex'
+          justifyContent='space-evenly'
+          flexWrap='wrap'
+          width='100%'
+        >
+          <SolutionCard
+            name='Solution 1'
+            text='Solution 1 text'
+            image={solution1Image}
+            imageTitle='Solution 1'
+          />
+          <SolutionCard
+            name='Solution 2'
+            text='Solution 2 text'
+            image={solution2Image}
+            imageTitle='Solution 2'
+          />
+        </Box>
       </Box>
     </Container>
   );
