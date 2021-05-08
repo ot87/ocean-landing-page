@@ -2,6 +2,7 @@ import { useRef } from 'react';
 
 import Main from './Main';
 import Solutions from './Solutions';
+import ScrollToTop from './ScrollToTop';
 
 import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -17,6 +18,7 @@ const App = () => {
       <CssBaseline />
       <Main onSolutionsClick={handleSolutionsButtonClick} />
       <Solutions ref={solutionsRef} />
+      <ScrollToTop />
     </Container>
   );
 };
