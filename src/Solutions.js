@@ -11,7 +11,8 @@ import SolutionCard from './SolutionCard';
 
 const useStyles = makeStyles({
   root: {
-    height: '100vh'
+    minHeight: '100vh',
+    height: 'auto'
   }
 });
 

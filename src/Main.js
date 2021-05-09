@@ -25,7 +25,10 @@ const useStyles = makeStyles(({ palette }) => ({
   }
 }));
 
-const Main = ({ onSolutionsClick }) => {
+const Main = ({
+  onSolutionsClick,
+  onAboutUsClick
+}) => {
   const classes = useStyles();
 
   return (
@@ -44,7 +47,14 @@ const Main = ({ onSolutionsClick }) => {
           <img className={classes.logo} src={logoImage} alt='Palms logo' />
           <Box>
             <Button size='large' color='primary' className={classes.textColor}>Solutions</Button>
-            <Button size='large' color='primary' className={classes.textColor}>About Us</Button>
+            <Button
+              size='large'
+              color='primary'
+              className={classes.textColor}
+              onClick={onAboutUsClick}
+            >
+              About Us
+            </Button>
             <Button size='large' color='primary' className={classes.textColor}>Contact Us</Button>
           </Box>
         </Box>
@@ -78,7 +88,8 @@ const Main = ({ onSolutionsClick }) => {
 };
 
 Main.propTypes = {
-  onSolutionsClick: PropTypes.func.isRequired
+  onSolutionsClick: PropTypes.func.isRequired,
+  onAboutUsClick: PropTypes.func.isRequired
 };
 
 export default Main;
