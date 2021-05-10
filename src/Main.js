@@ -45,7 +45,11 @@ const Main = ({
           alignItems='center'
         >
           <img className={classes.logo} src={logoImage} alt='Palms logo' />
-          <Box>
+          <Box
+            display='flex'
+            flexWrap='wrap'
+            justifyContent='flex-end'
+          >
             <Button size='large' color='primary' className={classes.textColor}>Solutions</Button>
             <Button
               size='large'
