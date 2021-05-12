@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
-import logoImage from './assets/logo.png';
-import backgroundImage from './assets/background-ocean.jpg';
+import logoImage from '../../assets/logo.png';
+import backgroundImage from '../../assets/background-ocean.jpg';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
@@ -59,7 +59,9 @@ const Main = ({
             >
               About Us
             </Button>
-            <Button size='large' color='primary' className={classes.textColor}>Contact Us</Button>
+            <Button size='large' color='primary' className={classes.textColor}>
+              Contact Us
+            </Button>
           </Box>
         </Box>
         <Box

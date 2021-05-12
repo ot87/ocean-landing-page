@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
 
-import logoImage from './assets/logo.png';
+import logoImage from '../../assets/logo.png';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';

@@ -1,9 +1,9 @@
 import { useRef } from 'react';
 
-import Main from './Main';
-import Solutions from './Solutions';
-import AboutUs from './AboutUs';
-import ScrollToTop from './ScrollToTop';
+import Main from './components/Main/Main';
+import Solutions from './components/Solutions/Solutions';
+import AboutUs from './components/AboutUs/AboutUs';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';

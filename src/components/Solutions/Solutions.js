@@ -1,13 +1,13 @@
 import { forwardRef } from 'react';
 
-import solution1Image from './assets/solution1.jpg';
-import solution2Image from './assets/solution2.jpg';
+import solution1Image from '../../assets/solution1.jpg';
+import solution2Image from '../../assets/solution2.jpg';
+import SolutionCard from '../SolutionCard/SolutionCard';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
-import SolutionCard from './SolutionCard';
 
 const useStyles = makeStyles({
   root: {
