@@ -27,7 +27,8 @@ const useStyles = makeStyles(({ palette }) => ({
 
 const Main = ({
   onSolutionsClick,
-  onAboutUsClick
+  onAboutUsClick,
+  onContactUsClick
 }) => {
   const classes = useStyles();
 
@@ -59,7 +60,12 @@ const Main = ({
             >
               About Us
             </Button>
-            <Button size='large' color='primary' className={classes.textColor}>
+            <Button
+              size='large'
+              color='primary'
+              className={classes.textColor}
+              onClick={onContactUsClick}
+            >
               Contact Us
             </Button>
           </Box>
@@ -95,7 +101,8 @@ const Main = ({
 
 Main.propTypes = {
   onSolutionsClick: PropTypes.func.isRequired,
-  onAboutUsClick: PropTypes.func.isRequired
+  onAboutUsClick: PropTypes.func.isRequired,
+  onContactUsClick: PropTypes.func.isRequired
 };
 
 export default Main;
