@@ -1,11 +1,10 @@
-import { useState } from 'react';
-
+import useFormReducer from '../../utils/useFormReducer';
 import CustomTextField from '../CustomTextField/CustomTextField';
+import CustomSubmitButton from '../CustomSubmitButton/CustomSubmitButton';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles(theme => ({
   form: {
@@ -17,61 +16,50 @@ const useStyles = makeStyles(theme => ({
 
 const ContactForm = () => {
   const classes = useStyles();
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const onNameChange = (e) => setName(e.target.value);
-  const onEmailChange = (e) => setEmail(e.target.value);
-  const onMessageChange = (e) => setMessage(e.target.value);
-  const required = value => !value;
+  const [{ name, email, message }, updateField, submitForm] = useFormReducer();
 
   return (
-    <Box
-      display='flex'
-      flexDirection='column'
-      className={classes.form}
+    <form
+      noValidate
+      autoComplete='off'
+      onChange={updateField}
+      onSubmit={submitForm}
     >
-      <Typography
-        gutterBottom
-        variant='h5'
-        color='primary'
-        align='center'
+      <Box
+        display='flex'
+        flexDirection='column'
+        className={classes.form}
       >
-        Ask us a question
-      </Typography>
-      <CustomTextField
-        name='name'
-        label='Name'
-        value={name}
-        onChange={onNameChange}
-        required={required}
-      />
-      <CustomTextField
-        name='email'
-        label='Email'
-        value={email}
-        onChange={onEmailChange}
-        required={required}
-      />
-      <CustomTextField
-        name='message'
-        label='Message'
-        value={message}
-        onChange={onMessageChange}
-        multiline
-        rows={5}
-        required={required}
-      />
-      <Button
-        variant='contained'
-        size='large'
-        color='primary'
-        className={classes.textColor}
-        // onClick={onAboutUsClick}
-      >
-        Submit
-      </Button>
-    </Box>
+        <Typography
+          gutterBottom
+          variant='h5'
+          color='primary'
+          align='center'
+        >
+          Ask us a question
+        </Typography>
+        <CustomTextField
+          name='name'
+          label='Name'
+          field={name}
+        />
+        <CustomTextField
+          name='email'
+          label='Email'
+          type='email'
+          placeholder='example@mail.com'
+          field={email}
+        />
+        <CustomTextField
+          name='message'
+          label='Message'
+          field={message}
+          multiline
+          rows={5}
+        />
+        <CustomSubmitButton />
+      </Box>
+    </form>
   );
 };
 
