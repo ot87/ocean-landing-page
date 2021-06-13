@@ -16,11 +16,14 @@ const useStyles = makeStyles(({ palette }) => ({
   }
 }));
 
-const Header = ({
-  onAboutUsClick,
-  onContactUsClick
-}) => {
+const Header = ({ innerAboutUsRef, innerContactUsRef }) => {
   const classes = useStyles();
+  const handleAboutUsButtonClick = () => {
+    innerAboutUsRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+  const handleContactUsButtonClick = () => {
+    innerContactUsRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <Box
@@ -39,7 +42,7 @@ const Header = ({
           size='large'
           color='primary'
           className={classes.textColor}
-          onClick={onAboutUsClick}
+          onClick={handleAboutUsButtonClick}
         >
           About Us
         </Button>
@@ -47,7 +50,7 @@ const Header = ({
           size='large'
           color='primary'
           className={classes.textColor}
-          onClick={onContactUsClick}
+          onClick={handleContactUsButtonClick}
         >
           Contact Us
         </Button>
@@ -57,8 +60,8 @@ const Header = ({
 };
 
 Header.propTypes = {
-  onAboutUsClick: PropTypes.func.isRequired,
-  onContactUsClick: PropTypes.func.isRequired
+  innerAboutUsRef: PropTypes.object.isRequired,
+  innerContactUsRef: PropTypes.object.isRequired
 };
 
 export default Header;

@@ -13,23 +13,14 @@ const App = () => {
   const solutionsRef = useRef();
   const aboutUsRef   = useRef();
   const contactUsRef = useRef();
-  const handleSolutionsButtonClick = () => {
-    solutionsRef.current.scrollIntoView({ behavior: 'smooth' });
-  };
-  const handleAboutUsButtonClick = () => {
-    aboutUsRef.current.scrollIntoView({ behavior: 'smooth' });
-  };
-  const handleContactUsButtonClick = () => {
-    contactUsRef.current.scrollIntoView({ behavior: 'smooth' });
-  };
 
   return (
     <Container maxWidth={false} disableGutters>
       <CssBaseline />
       <Main
-        onSolutionsClick={handleSolutionsButtonClick}
-        onAboutUsClick={handleAboutUsButtonClick}
-        onContactUsClick={handleContactUsButtonClick}
+        innerSolutionsRef={solutionsRef}
+        innerAboutUsRef={aboutUsRef}
+        innerContactUsRef={contactUsRef}
       />
       <Solutions ref={solutionsRef} />
       <AboutUs ref={aboutUsRef} />

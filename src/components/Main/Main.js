@@ -23,11 +23,14 @@ const useStyles = makeStyles(({ palette }) => ({
 }));
 
 const Main = ({
-  onSolutionsClick,
-  onAboutUsClick,
-  onContactUsClick
+  innerSolutionsRef,
+  innerAboutUsRef,
+  innerContactUsRef
 }) => {
   const classes = useStyles();
+  const handleSolutionsButtonClick = () => {
+    innerSolutionsRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <Container className={classes.root} maxWidth={false} disableGutters>
@@ -38,8 +41,8 @@ const Main = ({
         height='100%'
       >
         <Header
-          onAboutUsClick={onAboutUsClick}
-          onContactUsClick={onContactUsClick}
+          innerAboutUsRef={innerAboutUsRef}
+          innerContactUsRef={innerContactUsRef}
         />
         <Box
           display='flex'
@@ -60,7 +63,7 @@ const Main = ({
             variant='outlined'
             size='large'
             color='primary'
-            onClick={onSolutionsClick}
+            onClick={handleSolutionsButtonClick}
           >
             Solutions
           </Button>
@@ -71,9 +74,9 @@ const Main = ({
 };
 
 Main.propTypes = {
-  onSolutionsClick: PropTypes.func.isRequired,
-  onAboutUsClick: PropTypes.func.isRequired,
-  onContactUsClick: PropTypes.func.isRequired
+  innerSolutionsRef: PropTypes.object.isRequired,
+  innerAboutUsRef: PropTypes.object.isRequired,
+  innerContactUsRef: PropTypes.object.isRequired
 };
 
 export default Main;
