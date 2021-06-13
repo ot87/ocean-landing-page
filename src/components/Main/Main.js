@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 
-import logoImage from '../../assets/logo.png';
 import backgroundImage from '../../assets/background-ocean.jpg';
+
+import Header from '../Header/Header';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
@@ -40,36 +41,10 @@ const Main = ({
         flexDirection='column'
         height='100%'
       >
-        <Box
-          display='flex'
-          justifyContent='space-between'
-          alignItems='center'
-        >
-          <img className={classes.logo} src={logoImage} alt='Palms logo' />
-          <Box
-            display='flex'
-            flexWrap='wrap'
-            justifyContent='flex-end'
-          >
-            <Button size='large' color='primary' className={classes.textColor}>Solutions</Button>
-            <Button
-              size='large'
-              color='primary'
-              className={classes.textColor}
-              onClick={onAboutUsClick}
-            >
-              About Us
-            </Button>
-            <Button
-              size='large'
-              color='primary'
-              className={classes.textColor}
-              onClick={onContactUsClick}
-            >
-              Contact Us
-            </Button>
-          </Box>
-        </Box>
+        <Header
+          onAboutUsClick={onAboutUsClick}
+          onContactUsClick={onContactUsClick}
+        />
         <Box
           display='flex'
           flexDirection='column'
