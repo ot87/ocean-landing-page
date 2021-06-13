@@ -1,4 +1,8 @@
+import { useState } from 'react';
 import PropTypes from 'prop-types';
+
+import SolutionDialog from '../SolutionDialog/SolutionDialog';
+
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
@@ -23,6 +27,14 @@ const useStyles = makeStyles(theme => ({
 
 function SolutionCard({ name, text, image, imageTitle }) {
   const classes = useStyles();
+  const [solution, setSolution] = useState(false);
+
+  const handleClickSolution = () => {
+    setSolution(true);
+  };
+  const handleCloseSolution = () => {
+    setSolution(false);
+  };
 
   return (
     <Card className={classes.card} raised>
@@ -51,10 +63,23 @@ function SolutionCard({ name, text, image, imageTitle }) {
         </CardContent>
       </CardActionArea>
       <CardActions className={classes.actions}>
-        <Button variant='outlined' size='large' color='primary'>
+        <Button
+          variant='outlined'
+          size='large'
+          color='primary'
+          onClick={handleClickSolution}
+        >
           More
         </Button>
       </CardActions>
+      <SolutionDialog
+        open={solution}
+        onClose={handleCloseSolution}
+        name={name}
+        text={text}
+        image={image}
+        imageTitle={imageTitle}
+      />
     </Card>
   );
 }
