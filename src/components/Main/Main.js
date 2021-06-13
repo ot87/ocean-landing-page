@@ -10,17 +10,14 @@ import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-const useStyles = makeStyles(({ palette }) => ({
+const useStyles = makeStyles({
   root: {
     height: '100vh',
     backgroundImage: `url(${backgroundImage})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center'
-  },
-  textColor: {
-    color: palette.background.paper
   }
-}));
+});
 
 const Main = ({
   onSolutionsClick,
@@ -52,7 +49,6 @@ const Main = ({
             gutterBottom
             variant='h3'
             align='center'
-            className={classes.textColor}
           >
             Choose your best holidays!
           </Typography>
