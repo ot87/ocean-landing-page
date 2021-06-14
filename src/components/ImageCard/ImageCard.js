@@ -10,7 +10,7 @@ const useStyles = makeStyles({
     width: 100,
     margin: 4
   },
-  solution: {
+  media: {
     height: 100
   }
 });
@@ -22,7 +22,7 @@ function ImageCard({ image, title }) {
     <Card className={classes.card}>
       <CardActionArea>
         <CardMedia
-          className={classes.solution}
+          className={classes.media}
           image={image}
           title={title}
         />

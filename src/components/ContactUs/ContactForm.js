@@ -6,10 +6,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(({ spacing }) => ({
   form: {
     '& .MuiFormControl-root': {
-      marginBottom: theme.spacing(2)
+      marginBottom: spacing(2)
     }
   }
 }));

@@ -17,6 +17,9 @@ const useStyles = makeStyles(({ palette }) => ({
     backgroundSize: 'cover',
     backgroundPosition: 'center'
   },
+  main: {
+    height: '100%'
+  },
   textColor: {
     color: palette.background.paper
   }
@@ -34,41 +37,44 @@ const Main = ({
 
   return (
     <Container className={classes.root} maxWidth={false} disableGutters>
-      <Box
-        p={2}
-        display='flex'
-        flexDirection='column'
-        height='100%'
-      >
-        <Header
-          innerAboutUsRef={innerAboutUsRef}
-          innerContactUsRef={innerContactUsRef}
-        />
+      <Container className={classes.main} disableGutters>
         <Box
+          p={2}
           display='flex'
           flexDirection='column'
-          justifyContent='center'
-          alignItems='center'
-          flexGrow={1}
+          height='100%'
         >
-          <Typography
-            gutterBottom
-            variant='h3'
-            align='center'
-            className={classes.textColor}
+          <Header
+            handleSolutionsButtonClick={handleSolutionsButtonClick}
+            innerAboutUsRef={innerAboutUsRef}
+            innerContactUsRef={innerContactUsRef}
+          />
+          <Box
+            display='flex'
+            flexDirection='column'
+            justifyContent='center'
+            alignItems='center'
+            flexGrow={1}
           >
-            Choose your best holidays!
-          </Typography>
-          <Button
-            variant='outlined'
-            size='large'
-            color='primary'
-            onClick={handleSolutionsButtonClick}
-          >
-            Solutions
-          </Button>
+            <Typography
+              gutterBottom
+              variant='h3'
+              align='center'
+              className={classes.textColor}
+            >
+              Choose your best holidays!
+            </Typography>
+            <Button
+              variant='outlined'
+              size='large'
+              color='primary'
+              onClick={handleSolutionsButtonClick}
+            >
+              Start
+            </Button>
+          </Box>
         </Box>
-      </Box>
+      </Container>
     </Container>
   );
 };

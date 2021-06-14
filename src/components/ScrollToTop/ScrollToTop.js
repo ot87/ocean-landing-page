@@ -4,11 +4,11 @@ import Slide from '@material-ui/core/Slide';
 import Fab from '@material-ui/core/Fab';
 import lightBlue from '@material-ui/core/colors/lightBlue';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(({ spacing }) => ({
   root: {
     position: 'fixed',
-    bottom: theme.spacing(2),
-    right: theme.spacing(2),
+    bottom: spacing(2),
+    right: spacing(2),
     backgroundColor: lightBlue[100],
     '&:hover': {
       backgroundColor: lightBlue[200]

@@ -9,12 +9,13 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(({ spacing, breakpoints }) => ({
   root: {
-    paddingBottom: theme.spacing(3),
-    [theme.breakpoints.down('xs')]: {
+    paddingBottom: spacing(3),
+    [breakpoints.down('xs')]: {
       paddingLeft: 0,
-      paddingRight: 0
+      paddingRight: 0,
+      paddingBottom: spacing(2)
     }
   },
   media: {

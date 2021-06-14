@@ -9,20 +9,39 @@ import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(({ spacing, breakpoints }) => ({
   root: {
-    minHeight: '100vh',
-    height: 'auto'
+    paddingBottom: spacing(3),
+    [breakpoints.down('xs')]: {
+      paddingLeft: 0,
+      paddingRight: 0,
+      paddingBottom: spacing(2)
+    }
   }
-});
+}));
 
 const Solutions = forwardRef(function Solutions(_, ref) {
   const classes = useStyles();
+  const solutions = [
+    {
+      id: 1,
+      name: 'Solution 1',
+      text: 'Solution 1 text',
+      image: solution1Image,
+      imageTitle: 'Solution 1'
+    },
+    {
+      id: 2,
+      name: 'Solution 2',
+      text: 'Solution 2 text',
+      image: solution2Image,
+      imageTitle: 'Solution 2'
+    }
+  ];
 
   return (
     <Container
       className={classes.root}
-      maxWidth={false}
       disableGutters
       ref={ref}
     >
@@ -52,18 +71,15 @@ const Solutions = forwardRef(function Solutions(_, ref) {
           flexWrap='wrap'
           width='100%'
         >
-          <SolutionCard
-            name='Solution 1'
-            text='Solution 1 text'
-            image={solution1Image}
-            imageTitle='Solution 1'
-          />
-          <SolutionCard
-            name='Solution 2'
-            text='Solution 2 text'
-            image={solution2Image}
-            imageTitle='Solution 2'
-          />
+          {solutions.map(({ id, name, text, image, imageTitle }) => (
+            <SolutionCard
+              key={id}
+              name={name}
+              text={text}
+              image={image}
+              imageTitle={imageTitle}
+            />
+          ))}
         </Box>
       </Box>
     </Container>

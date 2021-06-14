@@ -12,10 +12,10 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(({ spacing }) => ({
   card: {
     width: 400,
-    marginBottom: theme.spacing(2)
+    marginBottom: spacing(2)
   },
   media: {
     height: 400

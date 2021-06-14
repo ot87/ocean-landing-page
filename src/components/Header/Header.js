@@ -16,7 +16,11 @@ const useStyles = makeStyles(({ palette }) => ({
   }
 }));
 
-const Header = ({ innerAboutUsRef, innerContactUsRef }) => {
+const Header = ({
+  handleSolutionsButtonClick,
+  innerAboutUsRef,
+  innerContactUsRef
+}) => {
   const classes = useStyles();
   const handleAboutUsButtonClick = () => {
     innerAboutUsRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -37,7 +41,14 @@ const Header = ({ innerAboutUsRef, innerContactUsRef }) => {
         flexWrap='wrap'
         justifyContent='flex-end'
       >
-        <Button size='large' color='primary' className={classes.textColor}>Solutions</Button>
+        <Button
+          size='large'
+          color='primary'
+          className={classes.textColor}
+          onClick={handleSolutionsButtonClick}
+        >
+          Solutions
+        </Button>
         <Button
           size='large'
           color='primary'
@@ -60,6 +71,7 @@ const Header = ({ innerAboutUsRef, innerContactUsRef }) => {
 };
 
 Header.propTypes = {
+  handleSolutionsButtonClick: PropTypes.func.isRequired,
   innerAboutUsRef: PropTypes.object.isRequired,
   innerContactUsRef: PropTypes.object.isRequired
 };
