@@ -1,6 +1,7 @@
 import { forwardRef } from 'react';
 
 import logoImage from '../../assets/logo.png';
+import { getScreenPaddings } from '../../utils/getCustomCss';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
@@ -9,15 +10,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 
-const useStyles = makeStyles(({ spacing, breakpoints }) => ({
-  root: {
-    paddingBottom: spacing(3),
-    [breakpoints.down('xs')]: {
-      paddingLeft: 0,
-      paddingRight: 0,
-      paddingBottom: spacing(2)
-    }
-  },
+const useStyles = makeStyles(getScreenPaddings({
   media: {
     float: 'right',
     width: '35vh'

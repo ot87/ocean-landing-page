@@ -2,6 +2,7 @@ import { forwardRef } from 'react';
 
 import ContactForm from './ContactForm';
 import ContactSocial from './ContactSocial';
+import { getScreenPaddings } from '../../utils/getCustomCss';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
@@ -11,16 +12,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 
-const useStyles = makeStyles(({ spacing, breakpoints }) => ({
-  root: {
-    paddingBottom: spacing(3),
-    [breakpoints.down('xs')]: {
-      paddingLeft: 0,
-      paddingRight: 0,
-      paddingBottom: spacing(2)
-    }
-  }
-}));
+const useStyles = makeStyles(getScreenPaddings());
 
 const ContactUs = forwardRef(function ContactUs(_, ref) {
   const classes = useStyles();
