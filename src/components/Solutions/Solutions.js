@@ -1,7 +1,5 @@
 import { forwardRef } from 'react';
 
-import solution1Image from '../../assets/solution1.jpg';
-import solution2Image from '../../assets/solution2.jpg';
 import SolutionCard from '../SolutionCard/SolutionCard';
 import { getScreenPaddings } from '../../utils/getCustomCss';
 
@@ -10,26 +8,29 @@ import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 
+const solutions = [
+  {
+    id: 1,
+    name: 'Solution 1',
+    text: 'Solution 1 text',
+    fullText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam euismod eu risus id lobortis. Proin eget nibh suscipit, egestas dui volutpat, eleifend nisl. Curabitur et mauris non quam semper mattis ac in tellus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam euismod eu risus id lobortis. Proin eget nibh suscipit, egestas dui volutpat, eleifend nisl. Curabitur et mauris non quam semper mattis ac in tellus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam euismod eu risus id lobortis. Proin eget nibh suscipit, egestas dui volutpat, eleifend nisl. Curabitur et mauris non quam semper mattis ac in tellus.',
+    imageUrl: `${process.env.PUBLIC_URL}/images/solution1.jpg`,
+    imageTitle: 'Solution 1'
+  },
+  {
+    id: 2,
+    name: 'Solution 2',
+    text: 'Solution 2 text',
+    fullText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam euismod eu risus id lobortis. Proin eget nibh suscipit, egestas dui volutpat, eleifend nisl. Curabitur et mauris non quam semper mattis ac in tellus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam euismod eu risus id lobortis. Proin eget nibh suscipit, egestas dui volutpat, eleifend nisl. Curabitur et mauris non quam semper mattis ac in tellus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam euismod eu risus id lobortis. Proin eget nibh suscipit, egestas dui volutpat, eleifend nisl. Curabitur et mauris non quam semper mattis ac in tellus.',
+    imageUrl: `${process.env.PUBLIC_URL}/images/solution2.jpg`,
+    imageTitle: 'Solution 2'
+  }
+];
+
 const useStyles = makeStyles(getScreenPaddings());
 
 const Solutions = forwardRef(function Solutions(_, ref) {
   const classes = useStyles();
-  const solutions = [
-    {
-      id: 1,
-      name: 'Solution 1',
-      text: 'Solution 1 text',
-      image: solution1Image,
-      imageTitle: 'Solution 1'
-    },
-    {
-      id: 2,
-      name: 'Solution 2',
-      text: 'Solution 2 text',
-      image: solution2Image,
-      imageTitle: 'Solution 2'
-    }
-  ];
 
   return (
     <Container
@@ -63,15 +64,7 @@ const Solutions = forwardRef(function Solutions(_, ref) {
           flexWrap='wrap'
           width='100%'
         >
-          {solutions.map(({ id, name, text, image, imageTitle }) => (
-            <SolutionCard
-              key={id}
-              name={name}
-              text={text}
-              image={image}
-              imageTitle={imageTitle}
-            />
-          ))}
+          {solutions.map(({ id, ...rest }) => <SolutionCard key={id} {...rest} />)}
         </Box>
       </Box>
     </Container>

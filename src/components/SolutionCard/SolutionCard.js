@@ -25,7 +25,13 @@ const useStyles = makeStyles(({ spacing }) => ({
   }
 }));
 
-function SolutionCard({ name, text, image, imageTitle }) {
+function SolutionCard({
+  name,
+  text,
+  fullText,
+  imageUrl,
+  imageTitle
+}) {
   const classes = useStyles();
   const [solution, setSolution] = useState(false);
 
@@ -41,7 +47,7 @@ function SolutionCard({ name, text, image, imageTitle }) {
       <CardActionArea disabled>
         <CardMedia
           className={classes.media}
-          image={image}
+          image={imageUrl}
           title={imageTitle}
         />
         <CardContent>
@@ -77,8 +83,7 @@ function SolutionCard({ name, text, image, imageTitle }) {
         onClose={handleCloseSolution}
         name={name}
         text={text}
-        image={image}
-        imageTitle={imageTitle}
+        fullText={fullText}
       />
     </Card>
   );
@@ -87,7 +92,8 @@ function SolutionCard({ name, text, image, imageTitle }) {
 SolutionCard.propTypes = {
   name: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
+  fullText: PropTypes.string.isRequired,
+  imageUrl: PropTypes.string.isRequired,
   imageTitle: PropTypes.string.isRequired
 };
 
