@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/ocean-the-best-holidays/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/ocean-the-best-holidays/static/js/main.608b8bbd.chunk.js",
+    "main.js.map": "/ocean-the-best-holidays/static/js/main.608b8bbd.chunk.js.map",
+    "runtime-main.js": "/ocean-the-best-holidays/static/js/runtime-main.b97b7215.js",
+    "runtime-main.js.map": "/ocean-the-best-holidays/static/js/runtime-main.b97b7215.js.map",
+    "static/js/2.0d5ceb43.chunk.js": "/ocean-the-best-holidays/static/js/2.0d5ceb43.chunk.js",
+    "static/js/2.0d5ceb43.chunk.js.map": "/ocean-the-best-holidays/static/js/2.0d5ceb43.chunk.js.map",
+    "index.html": "/ocean-the-best-holidays/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/ocean-the-best-holidays/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.0d5ceb43.chunk.js.LICENSE.txt": "/ocean-the-best-holidays/static/js/2.0d5ceb43.chunk.js.LICENSE.txt",
+    "static/media/background-ocean.506e686c.jpg": "/ocean-the-best-holidays/static/media/background-ocean.506e686c.jpg",
+    "static/media/facebook.3c9bbc34.svg": "/ocean-the-best-holidays/static/media/facebook.3c9bbc34.svg",
+    "static/media/instagram.fa0907b5.svg": "/ocean-the-best-holidays/static/media/instagram.fa0907b5.svg",
+    "static/media/linkedin.6cc6d3b8.svg": "/ocean-the-best-holidays/static/media/linkedin.6cc6d3b8.svg",
+    "static/media/logo.469418d5.png": "/ocean-the-best-holidays/static/media/logo.469418d5.png",
+    "static/media/slack.15141ce1.svg": "/ocean-the-best-holidays/static/media/slack.15141ce1.svg",
+    "static/media/twitter.51480627.svg": "/ocean-the-best-holidays/static/media/twitter.51480627.svg",
+    "static/media/whatsapp.a6ffdaf5.svg": "/ocean-the-best-holidays/static/media/whatsapp.a6ffdaf5.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b97b7215.js",
+    "static/js/2.0d5ceb43.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.608b8bbd.chunk.js"
+  ]
+}
